@@ -43,12 +43,17 @@ def get_parameter_to_calculate():
         loan_principal = get_loan_principal()
         number_of_months = get_number_of_months()
         interest = get_loan_interest()
-        calculate_monthly_payment(loan_principal, number_of_months, interest)
+        calculate_annuity_payment(loan_principal, number_of_months, interest)
     elif parameter_to_calculate.lower() == "p":
         annuity_payment = get_annuity_payment()
         number_of_months = get_number_of_months()
         interest = get_loan_interest()
         calculate_loan_principal(annuity_payment, number_of_months, interest)
+
+
+def calculate_overpayment(annuity_payment, number_of_months, loan_principal):
+    overpayment = math.ceil(annuity_payment * number_of_months - loan_principal)
+    print(f"Overpayment = {overpayment}")
 
 
 def calculate_months_to_repay(loan_principal, monthly_payment, i):
@@ -57,21 +62,24 @@ def calculate_months_to_repay(loan_principal, monthly_payment, i):
     plural_years = "s" if years != 1 else ""
     plural_months = "s" if months != 1 else ""
     if years == 0:
-        print(f"\nIt will take {months} month{plural_months} to repay this loan!")
+        print(f"It will take {months} month{plural_months} to repay this loan!")
     elif months == 0:
-        print(f"\nIt will take {years} year{plural_years} to repay this loan!")
+        print(f"It will take {years} year{plural_years} to repay this loan!")
     else:
-        print(f"\nIt will take {years} year{plural_years} and {months} month{plural_months} to repay this loan!")
+        print(f"It will take {years} year{plural_years} and {months} month{plural_months} to repay this loan!")
+    calculate_overpayment(monthly_payment, number_of_months, loan_principal)
 
 
-def calculate_monthly_payment(loan_principal, number_of_months, i):
-    monthly_payment = math.ceil(loan_principal * (i * (1 + i) ** number_of_months) / ((1 + i) ** number_of_months - 1))
-    print(f"\nYour monthly payment = {monthly_payment}!")
+def calculate_annuity_payment(loan_principal, number_of_months, i):
+    annuity_payment = math.ceil(loan_principal * (i * (1 + i) ** number_of_months) / ((1 + i) ** number_of_months - 1))
+    print(f"Your annuity payment = {annuity_payment}!")
+    calculate_overpayment(annuity_payment, number_of_months, loan_principal)
 
 
 def calculate_loan_principal(annuity_payment, number_of_months, i):
-    loan_principal = round(annuity_payment / ((i * (1 + i) ** number_of_months) / ((1 + i) ** number_of_months - 1)))
-    print(f"\nYour loan principal = {loan_principal}!")
+    loan_principal = math.floor(annuity_payment / ((i * (1 + i) ** number_of_months) / ((1 + i) ** number_of_months - 1)))
+    print(f"Your loan principal = {loan_principal}!")
+    calculate_overpayment(annuity_payment, number_of_months, loan_principal)
 
 
 if __name__ == '__main__':
