@@ -1,10 +1,11 @@
 import argparse
 import math
+import sys
 
 
 parser = argparse.ArgumentParser(description="The program allows to calculate differentiated or annuity loans")
 
-parser.add_argument("--type", required=True, choices=["diff", "annuity"],
+parser.add_argument("--type",
                     help="Only one loan type can be selected")
 parser.add_argument("--principal", type=int,
                     help="Denotes the loan principal")
@@ -12,7 +13,7 @@ parser.add_argument("--payment", type=int,
                     help="Denotes the annuity payment")
 parser.add_argument("--periods", type=int,
                     help="Denotes the number of months")
-parser.add_argument("--interest", required=True, type=float,
+parser.add_argument("--interest", type=float,
                     help="Denotes the interest rate")
 args = parser.parse_args()
 
@@ -20,7 +21,10 @@ loan_type = args.type
 loan_principal = args.principal
 annuity_payment = args.payment
 number_of_months = args.periods
-interest = args.interest / (12 * 100)  # Convert annual monthly interest rate to monthly
+if args.interest is not None:
+    interest = args.interest / (12 * 100)  # Convert annual monthly interest rate to monthly
+else:
+    interest = None  # Set interest to None if it's not provided
 
 
 def calculate_annuity_overpayment(annuity_payment, number_of_months, loan_principal):
@@ -30,7 +34,7 @@ def calculate_annuity_overpayment(annuity_payment, number_of_months, loan_princi
 
 def calculate_differentiated_overpayment(total_payments, loan_principal):
     overpayment = math.ceil(total_payments - loan_principal)
-    print(f"Overpayment = {overpayment}")
+    print(f"\nOverpayment = {overpayment}")
 
 
 def calculate_months_to_repay(loan_principal, annuity_payment, i):
@@ -66,20 +70,24 @@ def calculate_differentiated_payment(loan_principal, number_of_months, i):
         total_payments += differentiated_payment
         print(f"Month {m}: payment is {differentiated_payment}")
 
-    print("")
     calculate_differentiated_overpayment(total_payments, loan_principal)
 
 
 if __name__ == '__main__':
-    try:
-        if loan_type == "annuity" and annuity_payment is None:
-            calculate_annuity_payment(loan_principal, number_of_months, interest)
-        elif loan_type == "annuity" and loan_principal is None:
-            calculate_loan_principal(annuity_payment, number_of_months, interest)
-        elif loan_type == "annuity" and number_of_months is None:
-            calculate_months_to_repay(loan_principal, annuity_payment, interest)
-        elif loan_type == "diff":
-            calculate_differentiated_payment(loan_principal, number_of_months, interest)
-
-    except KeyboardInterrupt:
-        print("The session has been interrupted.")
+    if (loan_type not in ("diff", "annuity")
+            or interest is None
+            # There should always be 4 arguments
+            or len(sys.argv) != 5
+            # Combination with payment is invalid if it's a differentiated loan
+            or (loan_type == "diff" and annuity_payment is not None)
+            # Making sure none of the arguments can be negative
+            or any(val is not None and val < 0 for val in (loan_principal, number_of_months, interest, annuity_payment))):
+        print("Incorrect parameters")
+    elif loan_type == "annuity" and annuity_payment is None:
+        calculate_annuity_payment(loan_principal, number_of_months, interest)
+    elif loan_type == "annuity" and loan_principal is None:
+        calculate_loan_principal(annuity_payment, number_of_months, interest)
+    elif loan_type == "annuity" and number_of_months is None:
+        calculate_months_to_repay(loan_principal, annuity_payment, interest)
+    elif loan_type == "diff":
+        calculate_differentiated_payment(loan_principal, number_of_months, interest)
