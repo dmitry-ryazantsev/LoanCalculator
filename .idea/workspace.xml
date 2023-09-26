@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c98baf63-10ce-4274-a2a8-53a428148a2d" name="Changes" comment="Minor code improvements" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Loan Calculator/task/creditcalc/creditcalc.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Loan Calculator/task/test/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Loan Calculator/task/test/tests.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Loan Calculator/task/tests.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2UpxmlNUexB5LDE3SX6BDm7UjWi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Edu.Yaml.Migrate": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/dimmy/Documents/GitHub/LoanCalculator",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dimmy\Documents\GitHub\LoanCalculator\" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c98baf63-10ce-4274-a2a8-53a428148a2d" name="Changes" comment="" />
+      <created>1693650484620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693650484620</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Implemented core loan repayment calculation logic">
+      <option name="closed" value="true" />
+      <created>1693844378035</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693844378035</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Split the code into functions">
+      <option name="closed" value="true" />
+      <created>1693846362136</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693846362136</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Implemented annuity loan logic">
+      <option name="closed" value="true" />
+      <created>1694023649932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694023649932</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added overpayment computation">
+      <option name="closed" value="true" />
+      <created>1695401343888</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695401343888</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changed the user interaction from user input to argument parsing">
+      <option name="closed" value="true" />
+      <created>1695490139630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695490139630</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented differentiated payment logic">
+      <option name="closed" value="true" />
+      <created>1695573026519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695573026519</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a few negative cases handling">
+      <option name="closed" value="true" />
+      <created>1695636977572</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695636977572</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Code refactoring">
+      <option name="closed" value="true" />
+      <created>1695741597726</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695741597726</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed extra files">
+      <option name="closed" value="true" />
+      <created>1695742017291</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695742017291</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Minor code improvements">
+      <option name="closed" value="true" />
+      <created>1695742965777</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695742965777</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented core loan repayment calculation logic" />
+    <MESSAGE value="Split the code into functions" />
+    <MESSAGE value="Implemented annuity loan logic" />
+    <MESSAGE value="Added overpayment computation" />
+    <MESSAGE value="Changed the user interaction from user input to argument parsing" />
+    <MESSAGE value="Implemented differentiated payment logic" />
+    <MESSAGE value="Added a few negative cases handling" />
+    <MESSAGE value="Code refactoring" />
+    <MESSAGE value="Removed extra files" />
+    <MESSAGE value="Minor code improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code improvements" />
+  </component>
+</project>
