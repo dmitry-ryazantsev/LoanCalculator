@@ -6,7 +6,7 @@ import sys
 def parse_arguments():
     parser = argparse.ArgumentParser(description="The program allows to calculate differentiated or annuity loans")
 
-    parser.add_argument("--type",
+    parser.add_argument("--type", required=True, choices=["diff", "annuity"],
                         help="Only one loan type can be selected")
     parser.add_argument("--principal", type=int,
                         help="Denotes the loan principal")
@@ -14,7 +14,7 @@ def parse_arguments():
                         help="Denotes the annuity payment")
     parser.add_argument("--periods", type=int,
                         help="Denotes the number of months")
-    parser.add_argument("--interest", type=float,
+    parser.add_argument("--interest", required=True, type=float,
                         help="Denotes the interest rate")
 
     return parser.parse_args()
@@ -51,7 +51,7 @@ def calculate_annuity_payment(loan_principal, number_of_months, interest):
 
 
 def calculate_loan_principal(annuity_payment, number_of_months, interest):
-    loan_principal = math.floor(annuity_payment / ((interest * (1 + interest) ** number_of_months) / ((1 + interest) ** number_of_months - 1)))
+    loan_principal = math.ceil(annuity_payment / ((interest * (1 + interest) ** number_of_months) / ((1 + interest) ** number_of_months - 1)))
     print(f"Your loan principal = {loan_principal}!")
     calculate_annuity_overpayment(annuity_payment, number_of_months, loan_principal)
 
@@ -73,8 +73,7 @@ if __name__ == '__main__':
     number_of_months = args.periods
     interest = args.interest / (12 * 100) if args.interest is not None else None
 
-    if (loan_type not in ("diff", "annuity")
-            or interest is None or len(sys.argv) != 5
+    if (len(sys.argv) != 5
             or (loan_type == "diff" and annuity_payment is not None)
             or any(val is not None and val < 0 for val in (loan_principal, number_of_months, interest, annuity_payment))):
         print("Incorrect parameters")
