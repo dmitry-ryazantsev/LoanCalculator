@@ -71,7 +71,7 @@ if __name__ == '__main__':
     loan_principal = args.principal
     annuity_payment = args.payment
     number_of_months = args.periods
-    interest = args.interest / (12 * 100) if args.interest is not None else None
+    interest = args.interest / (12 * 100)
 
     if (len(sys.argv) != 5
             or (loan_type == "diff" and annuity_payment is not None)
