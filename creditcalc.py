@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     if (len(sys.argv) != 5
             or (loan_type == "diff" and annuity_payment is not None)
-            or any(val is not None and val < 0 for val in (loan_principal, number_of_months, interest, annuity_payment))):
+            or any(val is not None and val <= 0 for val in (loan_principal, number_of_months, interest, annuity_payment))):
         print("Incorrect parameters")
 
     elif loan_type == "annuity" and annuity_payment is None:
