@@ -21,6 +21,9 @@ This Python program allows you to calculate differentiated or annuity loans base
 ```
 $ python creditcalc.py --type=diff --principal=1000000 --periods=10 --interest=10
 Month 1: payment is 108334
+Month 2: payment is 107500
+Month 3: payment is 106667
+Month 4: payment is 105834
 Month 5: payment is 105000
 Month 6: payment is 104167
 Month 7: payment is 103334
